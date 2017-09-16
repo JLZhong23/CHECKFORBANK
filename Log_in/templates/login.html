@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link href="/static/CSS/userlogin.css" type="text/css" rel="stylesheet" />
+<title>系统登录</title>
+<style type="text/css">
+<!--
+.STYLE1 {font-size: 13px}
+-->
+</style>
+</head>
+
+<body>
+<div style="text-align:center;position:absolute;left:50%;margin-left:-482px;">
+
+	<img src="/static/images/login_main.png" width="965" height="510" class="backpng" />
+	<form action="/Log_in/" method="post">{% csrf_token %}
+
+	<div id="inputbox" style="position:absolute; left:492px; top:199px; height: 121px; width: 287px;">
+		<table width="264" style="position:absolute; left: 9px; top: 8px; width: 250px;">
+			<tr>
+        		<td height="26" style="width: 28px">&nbsp;</td>
+        		<th nowrap width="52">用户名：</th>
+        		<td width="168" background="/static/images/input1_bg.png">
+             		<span class="inputbg">
+
+       		  	    &nbsp;<input name="username" type="text" id="username" class="inputbg" size="18" style="background-repeat:no-repeat"/></span>
+   		  	  </td>
+    		</tr>
+  	  </table>
+		<table width="264" style="position:absolute; left: 4px; top: 65px; height: 28px; width: 254px;">
+    		<tr>
+        		<td height="26" style="width: 28px">&nbsp;</td>
+    			<th>密&nbsp;码：</th>
+        		<td background="/static/images/input1_bg.png">
+             		<span class="inputbg">
+             		&nbsp;<input name="password" type="password" id="password" class="inputbg" size="18" /></span>
+        		</td>
+    		</tr>
+  	  </table>
+  </div>
+	<div id="submit" style="position:absolute; left: 514px; top: 341px;">
+<input type="image" id="submit_btn" src="/static/images/btn_ok.png" value="login" />
+
+			</div>
+		</form>
+
+
+	<div id="regist" style="position:absolute; left: 654px; top: 341px;">
+		<a href="regist.html">
+			<img src="/static/images/btn_ok3.png" />
+		</a>
+	</div>
+	<div class="infotablehead">公&nbsp;告&nbsp;板</div>
+	<div style="position:absolute;left:167px;top:261px;width:250px;height:137px;">
+		<p align="left" class="STYLE1">
+			1.新用户请先注册账号		</p>
+	</div>
+</div>
+</body>
+<footer>服务热线：0731-84139978&nbsp;1339493498</footer>
+</html>
