@@ -2,9 +2,131 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link href="../CSS/userregist.css" type="text/css" rel="stylesheet" />
 <title>系统注册</title>
 </head>
-
+<script>
+	function mobilecheck()
+	{
+		var tel =document.getElementById("mobile").value;
+		if(isNaN(tel))
+		{
+			document.getElementById("tele").innerHTML="<font color='red'>请输入正确的手机号码！</font>";
+            document.getElementById("submit").disabled = false;
+        }
+        else 
+		{
+            document.getElementById("tele").innerHTML="<font color='green'>ok</font>";
+            document.getElementById("submit").disabled = true;
+        }
+	};
+    function validate() 
+	{
+        var pwd1 = document.getElementById("pwd1").value;
+        var pwd2 = document.getElementById("pwd2").value;
+        if(pwd1 == pwd2) 
+		{
+            document.getElementById("notice").innerHTML="<font color='green'>ok</font>";
+            document.getElementById("submit").disabled = false;
+        }
+        else 
+		{
+            document.getElementById("notice").innerHTML="<font color='red'>两次密码不相同</font>";
+            document.getElementById("submit").disabled = true;
+        }
+    }
+</script>
 <body>
+<div align="center">
+<fieldset style="width:80%">
+<legend>基本信息</legend>
+<form method="post">
+<table width="100%" border="1" align="center" cellpadding="4" cellspacing="1" bordercolor="#f7f7f7" style="margin-top: 5PX"> 
+	<tr class="oddrow">  
+		<td class="tdleft">
+			部门选择：
+		</td>
+		<td>
+			<select size="1" style="height:20px">
+			<option>财务部门</option>
+			<option>综合部门</option>
+			<option>部门经理</option>
+			<option>分管副总经理</option> 
+			</select>		
+		</td>
+	</tr>
+	<tr class="evenrow">
+		<td class="tdleft">
+			真实姓名：
+		</td>
+		<td>
+			<input type="text" class="inputbox" size="18" />
+		</td>
+	</tr>
+	<tr class="oddrow">
+   		<td class="tdleft">
+			手机号码：
+		</td>
+		<td>
+			<input type="text" id="mobile" class="inputbox" size="18" onKeyUp="mobilecheck()" maxlength="11" required="true"/><span id="tele"></span>
+		</td>
+	</tr>
+	<tr class="evenrow">
+   		<td class="tdleft">
+			身份证号：
+		</td>
+		<td>
+			<input type="text" class="inputbox" size="18" maxlength="18" required="true"/>
+		</td>
+	</tr>
+	<tr class="oddrow">
+   		<td class="tdleft">
+			账&nbsp;&nbsp;&nbsp;&nbsp;号：
+		</td>
+		<td>
+			<input type="text" class="inputbox" size="18" required="true"/>
+		</td>
+	</tr>
+	<tr class="evenrow">
+		<td class="tdleft">
+   			密&nbsp;&nbsp;&nbsp;&nbsp;码：
+		</td>
+		<td>
+			<input type="password" id="pwd1" class="inputbox" size="18" required="true"/>
+		</td>
+	</tr>
+	<tr class="oddrow">
+		<td class="tdleft">
+   			再次输入：
+		</td>
+		<td>
+			<input type="password" id="pwd2" class="inputbox" size="18" onKeyUp="validate()" required="true"/><span id="notice"></span>&nbsp;<img src="../images/main/tick.png" />
+	</tr>
+</table>
+		<input type="submit" value="提交" onclick="validate()" />&nbsp;
+		<input type="reset" value="重置" />&nbsp;
+		<input type="button" value="返回"  onclick="javascript:history.back();" />&nbsp;
+</form>
+</fieldset>
+<fieldset style="width:80%;">
+	<legend>注册须知</legend>
+	<table width="100%">
+    <tr>
+        <td style="line-height: 25px; text-indent: 2em; font-family: 宋体" align="left">
+            <p>
+                1. 注册前请认真检查输入的信息是否有误
+            </p>
+            <p>
+                2. 同一身份证号只允许注册一次
+            </p>
+            <p>
+                3. 若忘记密码，请致电管理员            
+			</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p></td>
+    </tr>
+</table>
+</fieldset>
+</div>
 </body>
 </html>
